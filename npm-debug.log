@@ -1,0 +1,114 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/nodejs', '/usr/bin/npm', 'publish' ]
+2 info using npm@4.1.2
+3 info using node@v7.5.0
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   escapedName: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/home/max/Desktop/slim-lang-loader',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /home/max/.npm/slim-lang-loader/0.0.2/package.tgz not in flight; packing
+9 verbose correctMkdir /home/max/.npm correctMkdir not in flight; initializing
+10 info lifecycle slim-lang-loader@0.0.2~prepublish: slim-lang-loader@0.0.2
+11 silly lifecycle slim-lang-loader@0.0.2~prepublish: no script for prepublish, continuing
+12 info lifecycle slim-lang-loader@0.0.2~prepare: slim-lang-loader@0.0.2
+13 silly lifecycle slim-lang-loader@0.0.2~prepare: no script for prepare, continuing
+14 verbose tar pack [ '/home/max/.npm/slim-lang-loader/0.0.2/package.tgz',
+14 verbose tar pack   '/home/max/Desktop/slim-lang-loader' ]
+15 verbose tarball /home/max/.npm/slim-lang-loader/0.0.2/package.tgz
+16 verbose folder /home/max/Desktop/slim-lang-loader
+17 verbose addLocalTarball adding from inside cache /home/max/.npm/slim-lang-loader/0.0.2/package.tgz
+18 verbose correctMkdir /home/max/.npm correctMkdir not in flight; initializing
+19 silly cache afterAdd slim-lang-loader@0.0.2
+20 verbose afterAdd /home/max/.npm/slim-lang-loader/0.0.2/package/package.json not in flight; writing
+21 verbose correctMkdir /home/max/.npm correctMkdir not in flight; initializing
+22 verbose afterAdd /home/max/.npm/slim-lang-loader/0.0.2/package/package.json written
+23 silly publish { name: 'slim-lang-loader',
+23 silly publish   version: '0.0.2',
+23 silly publish   author: { name: 'maxpleaner' },
+23 silly publish   description: 'webpack loader for slim => html => js',
+23 silly publish   dependencies: { 'html-loader': '^0.4.5', 'loader-utils': '^1.0.2' },
+23 silly publish   main: 'index.js',
+23 silly publish   repository:
+23 silly publish    { type: 'git',
+23 silly publish      url: 'git+https://github.com/maxpleaner/slim-lang-loader.git' },
+23 silly publish   keywords: [ 'webpack', 'slim-lang', 'slim' ],
+23 silly publish   licenses:
+23 silly publish    [ { type: 'MIT',
+23 silly publish        url: 'http://www.opensource.org/licenses/mit-license.php' } ],
+23 silly publish   readme: '# slim-lang-loader\r\n\r\nThis is a webpack loader to transform [slim](http://slimlang.org) files\r\ninto HTML, and then load that HTML into Javascript. This is "true blue"\r\nslim, using the ruby program\'s CLI executable.\r\n\r\nThe resulting HTML does not have any boiler added - it can be full\r\nHTML documents or just partials / fragments.\r\n\r\nThe code here is a modified version of\r\n[coffee-loader](https://github.com/webpack-contrib/coffee-loader).\r\n\r\n## howto\r\n\r\n1. Make sure the `slim` gem is installed and there is a `slimrb`\r\nexecutable available.\r\n\r\n2. Install this into your project: `npm install --save slim-lang-loader`\r\n\r\n3. Add hook to `webpack.config.js` (_make sure to put this above any loader\r\nthat expects javascript input_):\r\n\r\n    ```js\r\n    {test: /\\.slim$/, loader: [\'slim-lang-loader\']},\r\n    ```    \r\n\r\n    Also, add `.slim` to the list of extensions:\r\n  \r\n    ```jsP\r\n    resolve: {\r\n      extensions: [\'.js", <etc>, ".slim"]\r\n    },\r\n    ```\r\n\r\n4. load templates from javascript:\r\n\r\n    ```js\r\n     var file = require("html-loader!./test.slim");\r\n     alert(file); // this will be a html string that auto-reloads \r\n    ```\r\n',
+23 silly publish   readmeFilename: 'README.md',
+23 silly publish   gitHead: 'baf10ef0d75daecc4ec11e65a4cb67666bf8ee13',
+23 silly publish   bugs: { url: 'https://github.com/maxpleaner/slim-lang-loader/issues' },
+23 silly publish   homepage: 'https://github.com/maxpleaner/slim-lang-loader#readme',
+23 silly publish   _id: 'slim-lang-loader@0.0.2',
+23 silly publish   scripts: {},
+23 silly publish   _shasum: 'ba245f12095826bf7aefc601cd7812cda796e0e6',
+23 silly publish   _from: '.' }
+24 info lifecycle slim-lang-loader@0.0.2~prepublishOnly: slim-lang-loader@0.0.2
+25 silly lifecycle slim-lang-loader@0.0.2~prepublishOnly: no script for prepublishOnly, continuing
+26 verbose getPublishConfig undefined
+27 silly mapToRegistry name slim-lang-loader
+28 silly mapToRegistry using default registry
+29 silly mapToRegistry registry https://registry.npmjs.org/
+30 silly mapToRegistry data Result {
+30 silly mapToRegistry   raw: 'slim-lang-loader',
+30 silly mapToRegistry   scope: null,
+30 silly mapToRegistry   escapedName: 'slim-lang-loader',
+30 silly mapToRegistry   name: 'slim-lang-loader',
+30 silly mapToRegistry   rawSpec: '',
+30 silly mapToRegistry   spec: 'latest',
+30 silly mapToRegistry   type: 'tag' }
+31 silly mapToRegistry uri https://registry.npmjs.org/slim-lang-loader
+32 verbose publish registryBase https://registry.npmjs.org/
+33 silly publish uploading /home/max/.npm/slim-lang-loader/0.0.2/package.tgz
+34 verbose request uri https://registry.npmjs.org/slim-lang-loader
+35 verbose request sending authorization for write operation
+36 info attempt registry request try #1 at 3:37:51 PM
+37 verbose request using bearer token for auth
+38 verbose request id 5db0bbc30ab3c343
+39 http request PUT https://registry.npmjs.org/slim-lang-loader
+40 http 403 https://registry.npmjs.org/slim-lang-loader
+41 verbose headers { 'content-type': 'application/json',
+41 verbose headers   'cache-control': 'max-age=300',
+41 verbose headers   'content-length': '95',
+41 verbose headers   'accept-ranges': 'bytes',
+41 verbose headers   date: 'Tue, 07 Mar 2017 23:37:52 GMT',
+41 verbose headers   via: '1.1 varnish',
+41 verbose headers   connection: 'keep-alive',
+41 verbose headers   'x-served-by': 'cache-sjc3632-SJC',
+41 verbose headers   'x-cache': 'MISS',
+41 verbose headers   'x-cache-hits': '0',
+41 verbose headers   'x-timer': 'S1488929872.138835,VS0,VE145',
+41 verbose headers   vary: 'Accept-Encoding' }
+42 verbose request invalidating /home/max/.npm/registry.npmjs.org/slim-lang-loader on PUT
+43 error publish Failed PUT 403
+44 verbose stack Error: "You cannot publish over the previously published version 0.0.2." : slim-lang-loader
+44 verbose stack     at makeError (/usr/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:304:12)
+44 verbose stack     at CachingRegistryClient.<anonymous> (/usr/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:292:14)
+44 verbose stack     at Request._callback (/usr/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:212:14)
+44 verbose stack     at Request.self.callback (/usr/lib/node_modules/npm/node_modules/request/request.js:186:22)
+44 verbose stack     at emitTwo (events.js:106:13)
+44 verbose stack     at Request.emit (events.js:192:7)
+44 verbose stack     at Request.<anonymous> (/usr/lib/node_modules/npm/node_modules/request/request.js:1081:10)
+44 verbose stack     at emitOne (events.js:96:13)
+44 verbose stack     at Request.emit (events.js:189:7)
+44 verbose stack     at IncomingMessage.<anonymous> (/usr/lib/node_modules/npm/node_modules/request/request.js:1001:12)
+45 verbose statusCode 403
+46 verbose pkgid slim-lang-loader
+47 verbose cwd /home/max/Desktop/slim-lang-loader
+48 error Linux 4.4.0-64-generic
+49 error argv "/usr/bin/nodejs" "/usr/bin/npm" "publish"
+50 error node v7.5.0
+51 error npm  v4.1.2
+52 error code E403
+53 error "You cannot publish over the previously published version 0.0.2." : slim-lang-loader
+54 error If you need help, you may report this error at:
+54 error     <https://github.com/npm/npm/issues>
+55 verbose exit [ 1, true ]
