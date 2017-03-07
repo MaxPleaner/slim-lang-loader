@@ -1,0 +1,26 @@
+{
+  "name": "slim-lang-loader",
+  "version": "0.0.2",
+  "author": "maxpleaner",
+  "description": "webpack loader for slim => html => js",
+  "dependencies": {
+    "html-loader": "^0.4.5",
+    "loader-utils": "^1.0.2"
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maxpleaner/slim-lang-loader"
+  },
+  "keywords": [
+    "webpack",
+    "slim-lang",
+    "slim"
+  ],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/mit-license.php"
+    }
+  ]
+}
