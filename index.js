@@ -6,9 +6,7 @@ var path = require("path")
 function compileToSlim(remainingRequest) {
 	var basename = path.basename(remainingRequest)
 	var new_name = basename.replace(".slim", ".html")
-	execSync(`slimrb ${remainingRequest} > ${new_name}`)
-	text = execSync(`cat ${new_name}`)
-	return text
+	return execSync(`slimrb ${remainingRequest}`)
 }
 
 module.exports = function(source) {
