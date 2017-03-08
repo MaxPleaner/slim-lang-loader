@@ -18,7 +18,7 @@ executable available.
 2. Install this into your project: `npm install --save slim-lang-loader`
 
 3. Add hook to `webpack.config.js` (_make sure to put this above any loader
-that expects javascript input_):
+that expects javascript or coffeescript input_):
 
     ```js
     {test: /\.slim$/, loader: ['slim-lang-loader']},
