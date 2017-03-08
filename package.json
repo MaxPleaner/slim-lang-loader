@@ -1,6 +1,6 @@
 {
   "name": "slim-lang-loader",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "author": "maxpleaner",
   "description": "webpack loader for slim => html => js",
   "dependencies": {

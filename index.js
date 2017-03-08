@@ -4,8 +4,6 @@ var fs = require("fs")
 var path = require("path")
 
 function compileToSlim(remainingRequest) {
-	var basename = path.basename(remainingRequest)
-	var new_name = basename.replace(".slim", ".html")
 	return execSync(`slimrb ${remainingRequest}`)
 }
 
