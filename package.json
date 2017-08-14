@@ -1,11 +1,12 @@
 {
   "name": "slim-lang-loader",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "author": "maxpleaner",
   "description": "webpack loader for slim => html => js",
   "dependencies": {
     "html-loader": "^0.4.5",
-    "loader-utils": "^1.0.2"
+    "loader-utils": "^1.0.2",
+    "lodash.defaults": "^4.2.0"
   },
   "main": "index.js",
   "repository": {

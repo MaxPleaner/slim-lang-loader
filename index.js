@@ -1,18 +1,34 @@
-var loaderUtils = require("loader-utils");
+var getRemainingRequest = require("loader-utils").getRemainingRequest;
+var getOptions = require('loader-utils').getOptions;
 var execSync = require('child_process').execSync
 var fs = require("fs")
 var path = require("path")
+var defaults = require('lodash.defaults')
 
-function compileToSlim(remainingRequest) {
-	return execSync(`slimrb ${remainingRequest}`)
+
+function prepareArguments(slimOptions) {
+	return Object.entries(slimOptions).map(function(option_with_value) {
+		return "-o " + option_with_value.join("=");
+	}).join(" ");
+}
+
+function compileToSlim(remainingRequest, slimOptions) {
+	var additionalArguments = prepareArguments(slimOptions);
+	return execSync(`slimrb ${additionalArguments} ${remainingRequest}`)
 }
 
 module.exports = function(source) {
-	this.cacheable && this.cacheable();
-	var remainingRequest = loaderUtils.getRemainingRequest(this);
+	var loader = this;
+
+	loader.cacheable && loader.cacheable();
+
+	var remainingRequest = getRemainingRequest(loader);
+	var config = defaults({}, getOptions(loader), {
+		slimOptions: {}
+	});
 	var result;
 	try {
-		result = compileToSlim(remainingRequest);
+		result = compileToSlim(remainingRequest, config['slimOptions']);
 	} catch (e) {
 		var err = "";
 		if (e.location == null || e.location.first_column == null || e.location.first_line == null) {
