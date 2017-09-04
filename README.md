@@ -15,7 +15,7 @@ The code here is a modified version of
 1. Make sure the `slim` gem is installed and there is a `slimrb`
 executable available.
 
-2. Install this into your project: `npm install --save slim-lang-loader`
+2. Install this into your project: `npm install --save slim-lang-loader` (or `yarn add -D slim-lang-loader`)
 
 3. Add hook to `webpack.config.js` (_make sure to put this above any loader
 that expects javascript or coffeescript input_):
@@ -38,3 +38,20 @@ that expects javascript or coffeescript input_):
      var file = require("html-loader!./test.slim");
      alert(file); // this will be a html string that auto-reloads 
     ```
+
+## slim options
+
+You can pass [Slim options](http://www.rubydoc.info/gems/slim/frames#Configuring_Slim) to slimrb using following syntax:
+
+```js
+loader: [
+  {
+    loader: 'slim-lang-loader',
+    options: {
+      slimOptions: {
+        'disable_escape': true
+      }
+    }
+  }
+]
+```
