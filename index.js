@@ -1,4 +1,3 @@
-var getRemainingRequest = require("loader-utils").getRemainingRequest;
 var getOptions = require('loader-utils').getOptions;
 var execSync = require('child_process').execSync
 var fs = require("fs")
@@ -12,9 +11,9 @@ function prepareArguments(slimOptions) {
 	}).join(" ");
 }
 
-function compileToSlim(remainingRequest, slimOptions) {
+function compileToSlim(source, slimOptions) {
 	var additionalArguments = prepareArguments(slimOptions);
-	return execSync(`slimrb ${additionalArguments} ${remainingRequest}`)
+	return execSync(`slimrb ${additionalArguments}`, { input: source })
 }
 
 module.exports = function(source) {
@@ -22,13 +21,12 @@ module.exports = function(source) {
 
 	loader.cacheable && loader.cacheable();
 
-	var remainingRequest = getRemainingRequest(loader);
 	var config = defaults({}, getOptions(loader), {
 		slimOptions: {}
 	});
 	var result;
 	try {
-		result = compileToSlim(remainingRequest, config['slimOptions']);
+		result = compileToSlim(source, config['slimOptions']);
 	} catch (e) {
 		var err = "";
 		if (e.location == null || e.location.first_column == null || e.location.first_line == null) {
