@@ -8,7 +8,9 @@ var defaults = require('lodash.defaults')
 
 function prepareArguments(slimOptions) {
 	return Object.entries(slimOptions).map(function(option_with_value) {
-		return "-o " + option_with_value.join("=");
+		// Appends options like:
+		// -o "foo=bar" -o "baz=blah"
+		return "-o \"" + option_with_value.join("=") + "\"";
 	}).join(" ");
 }
 
